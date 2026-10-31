@@ -1,0 +1,24 @@
+[Unit]
+Description=Fatfish QQ DeepSeek bot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=qqbot
+Group=qqbot
+WorkingDirectory=/opt/qq-deepseek-bot
+ExecStart=/usr/bin/node --env-file=/opt/qq-deepseek-bot/.env /opt/qq-deepseek-bot/src/index.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=160
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/qq-deepseek-bot/data
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

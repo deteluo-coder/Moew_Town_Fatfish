@@ -25,7 +25,7 @@
 
 - **尚未等待一次真实群连续静默五小时后的自然触发。** 自动测试通过不等于这项实群观察已经完成；真实消息、断线、休眠或重启都会改变等待时间。
 - 新增图片尚未通过上述上传测试确认其在 QQ 客户端的实际显示、自动配图频率及群友体验；语气自然程度也需要日常使用反馈。
-- GitHub Actions 已配置 Windows 与 Ubuntu 的 Node.js 24 检查，**远程 CI 待首次上传后验证**。Linux CI 尚未执行，Linux/systemd/Caddy 及全天云部署尚未实机验证。
+- GitHub Actions 的 Windows 与 Ubuntu 两组 Node.js 24 检查已在首个源码提交中通过：[首次云端测试记录](https://github.com/deteluo-coder/Moew_Town_Fatfish/actions/runs/41177106207)。Linux CI 只运行离线测试，Linux/systemd/Caddy 及全天云部署尚未实机验证。
 - 官方接口、模型、公开搜索页面、源站及网络可能变化；模型摘要有损，公开搜索不保证取得最新结果，指定姓名替换也不覆盖图片文字或所有变体。
 
 ## 表情与更新提示
@@ -33,3 +33,4 @@
 试运行机器曾独立导入 8 张 Shigeyuki 创作的 [Anki-tan emoji](https://shigeyukey.github.io/shige-addons-wiki/Anki-tan.html)，按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 保留署名和来源，未修改像素。这些图片只在本机数据目录中，不随源码发布，也不会在克隆后自动下载。新使用者可通过“存表情 名称”附同一条 PNG/JPG 建立自己的库。
 
 更新已有部署时，先停止旧服务并备份自己的 `.env` 与完整 `data/`，再替换源码、检查配置并运行测试；不要用 `.env.example` 覆盖现有配置，不要同时启动两个实例。启动及功能开关见 [README.md](README.md)。
+
